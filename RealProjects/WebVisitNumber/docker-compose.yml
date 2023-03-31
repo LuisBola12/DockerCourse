@@ -1,0 +1,21 @@
+version: '3'
+services:
+  #Container i want to build
+  redis-server:
+    #Image to use
+    image: redis
+  #Container i want to build 
+  node-app:
+    restart: on-failure
+    #Build it using the dockerfile on the project
+    build: .
+    #Mapping ports
+    ports:
+      - "8080:8080"
+
+
+#COMANDS
+#THIS ONE IS JUST TO RUN
+#docker-compose up
+#THIS ONE IS TO BULD
+#docker-compose up --build 
